@@ -11,8 +11,8 @@ app.use(express.static('public'));
 app.get('/movies/:title', (req, res) => {
   movieTitle = req.params.title;
   return axios.get(`http://www.omdbapi.com/?apikey=${process.env.OMDB_API_KEY}&s=${movieTitle}`)
-    .then( response => res.send(response.data))
-    .catch( err => console.log(err))
+    .then(response => res.send(response.data))
+    .catch(err => console.log(err));
 });
 
 module.exports = app;
