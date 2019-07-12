@@ -4,7 +4,7 @@
   "description": "A new React project.",
   "main": "server/index.js",
   "scripts": {
-    "build": "npm run less && webpack --mode development",
+    "build": "webpack --mode development",
     "start": "npm run build && node server/index.js",
     "less": "lessc src/css/style.less dist/css/style.css",
     "lint": "eslint .",
@@ -34,7 +34,7 @@
     "react-redux": "^7.1.0",
     "react-router": "^5.0.1",
     "react-router-dom": "^5.0.1",
-    "redux": "^4.0.1",
+    "redux": "^4.0.3",
     "redux-promise-middleware": "^6.1.1",
     "serve-favicon": "^2.0.1",
     "url-loader": "^1.1.1",
