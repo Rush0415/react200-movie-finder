@@ -22,19 +22,19 @@ describe('express / route ', () => {
     nightmare = new Nightmare();
   });
 
-  it('/ route returns the correct status code', () => axios.get(searchPage)
-    .then(response => expect(response.status === 200))
-  );
-
   it('should have the correct page title', () =>
     nightmare
-      .goto(searchPage)
-      .evaluate(() => document.getElementById('appName').innerText)
+      .goto(url)
+      .evaluate(() => document.querySelector('h1').innerText)
       .end()
       .then((text) => {
         expect(text).to.equal('Movie Finder');
       })
   );
+
+  it('returns the correct status code', () => axios.get(url)
+    .then(response => expect(response.status === 200)));
+});
 
   it('should have search input', () => 
     nightmare
@@ -56,6 +56,3 @@ describe('express / route ', () => {
       })
   );
 
-  it('returns the correct status code', () => axios.get(url)
-  .then(response => expect(response.status === 200)));
-});
