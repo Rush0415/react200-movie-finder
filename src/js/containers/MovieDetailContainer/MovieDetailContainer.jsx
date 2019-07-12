@@ -18,7 +18,7 @@ export default class MovieDetailContainer extends Component {
       <div className='container'>
         <div id={ 'movie' }>
           <div className='card'>
-            <div className='card-header text-white bg-primary'>Movie Details</div>
+            <div className='card-header text-white bg-primary'>Movie details</div>
             <div className='card-body'>
               <div className='col'>
                 <img className='rounded float-left img-thumbnail' src={ movieInfo.Poster } />
@@ -38,16 +38,6 @@ export default class MovieDetailContainer extends Component {
                       <Link to='/' className='btn btn-outline-primary my-2 my-sm-0'>Go Back</Link>
                     </p>
                   </div>
-                  {/* <div className='card-body'>
-                    <p className='card-text>'>Movie Title: {movieInfo.Title}</p>
-                    <p className='card-text>'>Release {movieInfo.Year} {movieInfo.Runtime}
-                      {movieInfo.Genre}</p>
-                    <p className='card-text>'>Plot: {movieInfo.Plot}</p>
-                    <p>{movieInfo.Awards}</p>
-                    <p>MetaScore: {movieInfo.Metascore}</p>
-                    <p className='card-text' >IMDB: {movieInfo.imdbRating}</p>
-                    <Link to='/' className='btn btn-outline-primary my-2 my-sm-0'>Go Back</Link>
-                  </div> */}
                 </div>
               </div>
             </div>
