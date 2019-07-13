@@ -13,11 +13,10 @@ app.use(express.static(path.join(__dirname, '/../dist')));
 
 app.listen(8888);
 
-const searchPage = 'http://localhost:8888';
-// const moreInfo = 'http://localhost:8888/movie/';
+const url = 'http://localhost:8888';
 
 
-describe('express / route ', () => {
+describe('express', () => {
   beforeEach(() => {
     nightmare = new Nightmare();
   });
@@ -25,34 +24,13 @@ describe('express / route ', () => {
   it('should have the correct page title', () =>
     nightmare
       .goto(url)
-      .evaluate(() => document.querySelector('h1').innerText)
+      .evaluate(() => document.querySelector('body').innerText)
       .end()
       .then((text) => {
-        expect(text).to.equal('Movie Finder');
+        expect(text).to.equal('The Movie Finder App.\n\nFind it!\n');
       })
   );
 
   it('returns the correct status code', () => axios.get(url)
     .then(response => expect(response.status === 200)));
 });
-
-  it('should have search input', () => 
-    nightmare
-      .goto(searchPage)
-      .evaluate(() => document.querySelector('body').innerHTML)
-      .end()
-      .then((text) => {
-        expect(text).to.contain('input');
-      })
-  );
-
-  it('should have button element', () => 
-    nightmare
-      .goto(searchPage)
-      .evaluate(() => document.querySelector('body').innerHTML)
-      .end()
-      .then((text) => {
-        expect(text).to.contain('button');
-      })
-  );
-
